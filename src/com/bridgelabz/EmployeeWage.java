@@ -17,6 +17,11 @@ public class EmployeeWage {
         companyEmpWageList.add(company);
         companyEmpWageList.add(company2);
         System.out.println(companyEmpWageList);
+        for (Company comp: companyEmpWageList) {
+            if (comp.equals(company)){
+                System.out.println(company.totalWagesPerMonth);
+            }
+        }
     }
 
 
