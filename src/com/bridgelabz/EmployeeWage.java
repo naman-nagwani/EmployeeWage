@@ -1,6 +1,8 @@
 package com.bridgelabz;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class EmployeeWage {
 
@@ -12,10 +14,10 @@ public class EmployeeWage {
         System.out.println("Total wage for company 1 : "+company.empWageBuilder());
         System.out.println("Total wage for company 2 : "+company2.empWageBuilder());
 
-        Company[] companyEmpWageArray = new Company[2];
-        companyEmpWageArray[0]=company;
-        companyEmpWageArray[1]=company2;
-        System.out.println(Arrays.toString(companyEmpWageArray));
+        List<Company> companyEmpWageList = new ArrayList<Company>();
+        companyEmpWageList.add(company);
+        companyEmpWageList.add(company2);
+        System.out.println(companyEmpWageList);
     }
 
 
