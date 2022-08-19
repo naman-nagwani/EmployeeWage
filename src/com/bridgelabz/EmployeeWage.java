@@ -6,7 +6,10 @@ public class EmployeeWage {
     public static void main(String[] args) {
         System.out.println("Welcome to EmployeeWage computation");
         Company company = new Company();
-        company.calculate();
+        Company company2 = new Company();
+        System.out.println("Total wage for company 1 : "+company.calculate());
+        System.out.println("Total wage for company 2 : "+company.calculate());
+
     }
 
 
@@ -35,7 +38,7 @@ class Company{
 
     public static final int IS_FULL_TIME = 2;
 
-    public void calculate(){
+    public int calculate(){
         while (daysCount < WORKING_DAYS_PER_MONTH  &&  totalHours <= TOTAL_WORKING_HOURS) {
             int empPresent = (int) (Math.random() * 10) % 3;
             System.out.println("Total Hours:"+totalHours);
@@ -57,5 +60,7 @@ class Company{
             daysCount++;
         }
         System.out.println("Total Employee Wage for a month:" + totalWagesPerMonth);
+
+        return totalWagesPerMonth;
     }
 }
