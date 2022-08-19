@@ -9,8 +9,8 @@ public class EmployeeWage {
         System.out.println("Welcome to EmployeeWage computation");
         Company company = new Company();
         Company company2 = new Company();
-        System.out.println("Total wage for company 1 : "+company.calculate());
-        System.out.println("Total wage for company 2 : "+company2.calculate());
+        System.out.println("Total wage for company 1 : "+company.empWageBuilder());
+        System.out.println("Total wage for company 2 : "+company2.empWageBuilder());
 
         Company[] companyEmpWageArray = new Company[2];
         companyEmpWageArray[0]=company;
@@ -21,7 +21,7 @@ public class EmployeeWage {
 
 }
 
-class Company{
+class Company implements WageBuilder{
     public static final int WAGE_PER_HOUR = 20;
 
     public static final int WORKING_DAYS_PER_MONTH = 20;
@@ -44,7 +44,7 @@ class Company{
 
     public static final int IS_FULL_TIME = 2;
 
-    public int calculate(){
+    public int empWageBuilder(){
         while (daysCount < WORKING_DAYS_PER_MONTH  &&  totalHours <= TOTAL_WORKING_HOURS) {
             int empPresent = (int) (Math.random() * 10) % 3;
             System.out.println("Total Hours:"+totalHours);
@@ -76,4 +76,8 @@ class Company{
                 "\nTotal Working hours : "+totalHours+
                 "\nTotal Monthly wage : "+totalWagesPerMonth;
     }
+}
+
+interface WageBuilder {
+    int empWageBuilder();
 }
