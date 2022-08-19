@@ -1,7 +1,6 @@
 package com.bridgelabz;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class EmployeeWage {
@@ -46,6 +45,7 @@ class Company implements WageBuilder{
 
     public static final int IS_FULL_TIME = 2;
 
+    @Override
     public int empWageBuilder(){
         while (daysCount < WORKING_DAYS_PER_MONTH  &&  totalHours <= TOTAL_WORKING_HOURS) {
             int empPresent = (int) (Math.random() * 10) % 3;
