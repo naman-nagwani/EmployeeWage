@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import java.util.Arrays;
+
 public class EmployeeWage {
 
 
@@ -8,8 +10,12 @@ public class EmployeeWage {
         Company company = new Company();
         Company company2 = new Company();
         System.out.println("Total wage for company 1 : "+company.calculate());
-        System.out.println("Total wage for company 2 : "+company.calculate());
+        System.out.println("Total wage for company 2 : "+company2.calculate());
 
+        Company[] companyEmpWageArray = new Company[2];
+        companyEmpWageArray[0]=company;
+        companyEmpWageArray[1]=company2;
+        System.out.println(Arrays.toString(companyEmpWageArray));
     }
 
 
@@ -62,5 +68,12 @@ class Company{
         System.out.println("Total Employee Wage for a month:" + totalWagesPerMonth);
 
         return totalWagesPerMonth;
+    }
+
+    @Override
+    public String toString() {
+        return "Number of Working days : "+daysCount+
+                "\nTotal Working hours : "+totalHours+
+                "\nTotal Monthly wage : "+totalWagesPerMonth;
     }
 }
