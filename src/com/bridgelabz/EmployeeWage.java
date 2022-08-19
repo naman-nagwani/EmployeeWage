@@ -13,7 +13,7 @@ public class EmployeeWage {
         System.out.println("Total wage for company 1 : "+company.empWageBuilder());
         System.out.println("Total wage for company 2 : "+company2.empWageBuilder());
 
-        List<Company> companyEmpWageList = new ArrayList<Company>();
+        List<Company> companyEmpWageList = new ArrayList<>();
         companyEmpWageList.add(company);
         companyEmpWageList.add(company2);
         System.out.println(companyEmpWageList);
